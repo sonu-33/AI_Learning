@@ -1,0 +1,109 @@
+NOTES
+-------
+
+Virtual Environment
+------------------------------------------
+It is better to create a separate environment for each project. This refers to a Python virtual environment
+(venv), which is an isolated space for installing and managing project-specific dependencies (like openai or
+langchain) without affecting your global Python installation or other projects (e.g., your Selenium framework).
+
+Conda (Most advisable)
+------------------------
+Conda is an open-source package and environment manager. It was originally built for Python but supports multiple languages (R, C++, etc.). It comes bundled with two distributions:
+
+Anaconda: Full package — comes with 250+ pre-installed libraries (~3GB)
+Miniconda: Lightweight version — just conda itself, you install what you need (~400MB)
+
+Working on Conda env
+------------------
+Instal Miniconda on local machine
+Open Anaconda Powershell from Search on your local machine OR from Desktop shortcut
+To activate Conda run this on Conda powershell: conda init powershell
+Restart VS, then start using Conda env on VS
+Then run this on VS to create a conda venv: conda create -p venv python==3.13
+To activate the conda venv run this in VS: conda activate C:\AI_Learning\venv
+
+
+To create venv on python (less advisable though):
+-------------------------------------------------
+Command to create an env : python -m venv myenv
+Then you need to activate the myenv. On Terminal run this command: myenv\Scripts\activate
+You will see (myenv) in your Terminal in the next line
+
+What is epoch
+--------------
+An epoch is one full pass of the entire training dataset through the model.
+That means 1 epoch = The model sees all training dataset once 
+
+What is early stopping
+----------------------
+Early stopping is a technique used to stop training an ANN before it starts overfitting.
+Typically, we monitor performance on a validation set during training. If the validation loss stops improving, or starts getting worse for a defined number of epochs, training is stopped automatically. That “wait period” is often called patience.
+
+What is overfitting
+--------------------
+Overfitting happens when an ANN learns the training data too well, including noise and random patterns that do not generalize to new data. As a result, the model performs very well on the training set but poorly on validation or test data.
+
+What is optimizer
+----------------------
+In ANN model compilation, the optimizer is the algorithm that tells the model how to update its weights and biases during training to reduce the loss.
+
+What are Weights, Biases, Loss
+-------------------------------
+Weights are the main learnable numbers that determine how strongly one neuron’s input influences the next layer.
+Biases are extra learnable values added to the weighted sum, helping the model shift predictions more flexibly.
+Loss is the measure of how wrong the model’s predictions are compared with the actual answers.
+
+- Prediction formula at a neuron is roughly: output = activation(weight × input + bias)
+- Then loss tells the model how far that output is from the true target
+
+What is StandardScaler?
+-----------------------
+This is scaling tool that transforms numerical features. Example: In a Payroll data, there is a column with Salary as 20,000 - 2,00,000 (large numbers). There is another column with Age as 18-60 (small numbers). Without scaler, the model will give importance to the large numbers (Salary). However, with scaler, the numbers in the columns will be converted to a comparable range with formuala z = (x - mean) / std_deviation. 
+Age        Salary   -->  Age       Salary
+25         50,000   --> -0.8       -0.5
+40         9,00,000 -->  1.2        1.4
+
+
+Tokenization
+---------------
+word_tokenize is used to convert into words
+sent_tokenize is used to convert into sentences
+Both are widely used
+
+
+Most used techniques to preprocess text
+--------------------------------------- 
+lemmatization and stopword are used most frequently in real time. Stemming give poor quality. so it should be avoided.
+It is better to use both on the same set of words to get better quality output.
+
+Using stopword and lemmatization combined is better.
+Convert text into tokens 
+# Then, apply stopword, to remove all the stopwords from the token list
+# Next, apply lemmatization on token list 
+
+
+For agentic AI, which is used mostly between 
+nltk.pos_tag() and nltk.ne_chunk()
+-----------------------------------------------------
+Combine of both are mostly used for real time
+
+nltk.pos_tag() is used to identify the grammatical role of each word
+Output: List of tuples with (word, grammatical_tag)
+
+nltk.ne_chunk() to identify real-world entities (people, places, organizations, dates, etc.)
+
+
+which are the mostly used text to vector technique while building AI agent
+----------------------------------------------
+Transformer-based dense embeddings
+e.g. OpenAI embeddings (text-embedding-3, text-embedding-3-large)
+Sentence-BERT / SBERT
+Hugging Face encoder models like all-MiniLM, mpnet-base-v2
+
+
+In embedding, why do we keep the vocabolary size large?
+-------------------------------------------------------
+We should set vocab_size to be larger than the number of unique words in your dataset. For general English text, 10,000 covers the most common words comfortably. If you go smaller, collisions corrupt the meaning — the model learns noise instead of language patterns.
+
+TEST GIT Push...

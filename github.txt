@@ -1,0 +1,42 @@
+how do I check repo name from github?
+---------------------------------------
+On GitHub, open the repository and look at the top-left area of the page
+The repository name appears as owner / repository-name. (Exp: sonu-33/PracticeAI)
+click the Code button, and copy the HTTPS or SSH value shown there—it will end with .git. (Exp: https://github.com/sonu-33/PracticeAI.git)
+
+
+While working on Git, Initialize Git (if not already done): 
+------------------------------------------------------------
+git init
+
+
+For creating new repository on GitHub, 
+--------------------------------------
+Go to github.com → click New Repository
+Give it a name, choose public/private, click Create Repository
+
+
+To Link Local Project to GitHub
+------------------------------
+git remote set-url origin https://github.com/your-username/your-repo-name.git
+Exp: git remote set-url origin https://github.com/sonu-33/AI_Learning.git
+     
+
+
+To Stage & Commit Your Files
+-----------------------------
+git add .
+git add AI_Learning.txt github.txt requirements.txt training_history.png word_vector_example.py 
+git add ann_cust_churn_stream_app.py ann_model_cust_churn_predict.py ann_model_cust_churn.py ann_model_cust_salary_predict.py ann_model_cust_salary.py
+
+git commit -m "Committing on 22-May 3:19 PM."
+
+
+Push to GitHub
+-----------------
+git push -u origin main
+
+
+Streamlit
+---------------------
+https://share.streamlit.io/
