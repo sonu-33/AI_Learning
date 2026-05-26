@@ -1,0 +1,13 @@
+tensorflow==2.20.0
+pandas 
+numpy 
+scikit-learn
+tensorboard
+matplotlib
+streamlit
+scikeras
+
+## Command to install: pip install tensorflow
+## Check if installed: python -m pip show tensorboard
+
+## git add AI_Learning.txt ann_implementation.py ann_model_prediction.py github.txt input_app_streamlit.py PracticeAI.py requirements.txt training_history.png word_vector_example.py
